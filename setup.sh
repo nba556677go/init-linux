@@ -65,3 +65,11 @@ esac
 echo Done!
 wget $MINICONDA_URL
 sh $MINICONDA_SCRIPT
+
+case "$(uname)" in
+    Linux)
+        sudo apt-get update
+        sudo apt install tmux
+        tmux source-file ~/.tmux.conf
+        ;;
+esac
