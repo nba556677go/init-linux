@@ -67,11 +67,10 @@ echo Done!
 wget $MINICONDA_URL
 sh $MINICONDA_SCRIPT
 
-# install tmux
+# install tmux. source config file need to be done manually by 1. tmux 2. tmux source-file ~/.tmux.conf
 case "$(uname)" in
     Linux)
         sudo apt-get update
         sudo apt install tmux
-        tmux source-file ~/.tmux.conf
         ;;
 esac
