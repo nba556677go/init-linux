@@ -27,6 +27,7 @@ fi
 # move files to home directory
 mv init-linux/.bash* .
 mv init-linux/.vim* .
+mv init-linux/.tmux* .
 cd .vim/
 mkdir bundle; cd bundle
 git clone https://github.com/nanotech/jellybeans.vim
@@ -66,6 +67,7 @@ echo Done!
 wget $MINICONDA_URL
 sh $MINICONDA_SCRIPT
 
+# install tmux
 case "$(uname)" in
     Linux)
         sudo apt-get update
