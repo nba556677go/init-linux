@@ -10,3 +10,7 @@ case "$(uname)" in
 esac
 alias rm='rm -i' # confirm beform deleting files 
 alias ssh='ssh -XY -o ServerAliveInterval=180' # send signal to ssh server every 180 seconds to prevent disconnecting
+#source .bash_aliases
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
