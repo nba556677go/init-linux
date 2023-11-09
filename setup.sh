@@ -18,6 +18,11 @@ if [ -d .vim ]; then
     mv .vim .env_backup
     need_backup=true
 fi
+if [ -d .bash_aliases ]; then
+    echo .bash_aliases exists. Moving to backup...
+    mv .bash_aliases .env_backup
+    need_backup=true
+fi
 # Delete environment backup if not needed
 if [ "$need_backup" = false ]; then
     echo Deleting original user files
