@@ -18,11 +18,6 @@ if [ -d .vim ]; then
     mv .vim .env_backup
     need_backup=true
 fi
-if [ -d .bash_aliases ]; then
-    echo .bash_aliases exists. Moving to backup...
-    mv .bash_aliases .env_backup
-    need_backup=true
-fi
 # Delete environment backup if not needed
 if [ "$need_backup" = false ]; then
     echo Deleting original user files
@@ -32,7 +27,6 @@ fi
 # move files to home directory
 mv init-linux/.bash* .
 mv init-linux/.vim* .
-mv init-linux/.tmux* .
 cd .vim/
 mkdir bundle; cd bundle
 git clone https://github.com/nanotech/jellybeans.vim
@@ -71,11 +65,3 @@ esac
 echo Done!
 wget $MINICONDA_URL
 sh $MINICONDA_SCRIPT
-
-# install tmux. source config file need to be done manually by 1. tmux 2. tmux source-file ~/.tmux.conf
-case "$(uname)" in
-    Linux)
-        sudo apt-get update
-        sudo apt install tmux
-        ;;
-esac
